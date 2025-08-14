@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next Fundamentals
+
+A lightweight practice project built with **Next.js 15**, **React 19**, and **TypeScript** to explore core Next.js concepts like file-based routing, dynamic routes, server components, and basic API routes.
+
+> **Disclaimer:** This project is intentionally light on styling. It’s all about learning the framework, so… _No Judging!_ 🙃
+
+---
+
+## Features
+
+- **App Router** (`app/` directory) with nested routes
+- **Dynamic Routes** for blog posts (`/blog/[slug]`)
+- **Markdown-based Content** rendering for posts
+- **Simple SEO** metadata and JSON-LD
+- **Basic API Route** example (OpenWeather API integration)
+- **Server Components** and **Client Components** usage
+- Minimal **Tailwind CSS** setup
+
+---
+
+## Tech Stack
+
+- [Next.js 15](https://nextjs.org/) (App Router + Turbopack)
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/) (basic utility classes)
+- [OpenWeather API](https://openweathermap.org/api) (weather example)
+- Markdown parsing for blog posts
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone & Install
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/YOUR_USERNAME/next-fundamentals.git
+cd next-fundamentals
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Create a `.env.local` file in the root:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+OPENWEATHER_API_KEY=your_api_key_here
+```
 
-## Learn More
+### 3. Run the Dev Server
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+yarn dev
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Then visit [http://localhost:3000](http://localhost:3000).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Adding Blog Content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Blog posts are stored as markdown files in:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/app/content/posts/
+```
+
+Each post should start with frontmatter:
+
+```markdown
+---
+title: 'My First Post'
+excerpt: 'This is a short summary.'
+banner: '/images/banner.jpg'
+date: '2025-08-14'
+---
+
+Here is the content of the post...
+```
+
+---
+
+## Goals of This Project
+
+- Practice **Next.js fundamentals** without getting lost in CSS polish
+- Understand **SSR vs CSR** behavior
+- Experiment with **dynamic routing**
+- Learn how to integrate a simple external API
